@@ -7,6 +7,7 @@ import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import PageNotFound from "../../Pages/PageNotFound/PageNotFound";
+import Phones from "../../Pages/Phones/Phones";
 import SignUp from "../../SignUp/SignUp";
 
 
@@ -33,6 +34,7 @@ element:<Login></Login>
 
 
         },
+        
         {
                 path:'/signup',
                 element:<SignUp></SignUp>
@@ -40,6 +42,19 @@ element:<Login></Login>
                 
                 
                         },
+
+
+                        {
+                                path: '/brands/:brand',
+                                element: <Phones></Phones>,
+                                loader: ({ params }) =>
+                                  fetch(`http://localhost:5000/brands/${params.brand}`),
+                              },
+
+
+
+
+
                         
         
 {
