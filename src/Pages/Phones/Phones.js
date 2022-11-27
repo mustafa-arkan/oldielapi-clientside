@@ -1,8 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import BookModal from './BookModal/BookModal';
+
+
 import Phone from './Phone';
 
-import PhoneModal from './PhoneModal/PhoneModal';
+
 
 
 const Phones = () => {
@@ -26,7 +29,7 @@ const Phones = () => {
 
         ))}
       </div>
-      <PhoneModal></PhoneModal>
+      <BookModal></BookModal>
     </div>
   );
 };
