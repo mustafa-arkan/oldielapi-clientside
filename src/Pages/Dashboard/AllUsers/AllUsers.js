@@ -25,21 +25,21 @@ const AllUsers = () => {
         }
     });
 
-    // const handleMakeAdmin = id => {
-    //     fetch(`https://doctors-portal-server-rust.vercel.app/users/admin/${id}`, {
-    //         method: 'PUT', 
-    //         headers: {
-    //             authorization: `bearer ${localStorage.getItem('accessToken')}`
-    //         }
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         if(data.modifiedCount > 0){
-    //             toast.success('Make admin successful.')
-    //             refetch();
-    //         }
-    //     })
-    // }
+    const handleMakeAdmin = id => {
+        fetch(`http://localhost:5000/users/admin/${id}`, {
+            method: 'PUT' 
+            // headers: {
+            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+            // }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.modifiedCount > 0){
+                toast.success('Make admin successful.')
+                refetch();
+            }
+        })
+    }
 
     return (
         <div>
@@ -61,7 +61,7 @@ const AllUsers = () => {
             <th>{i+1}</th>
             <td>{user.name}</td>
             <td>{user.email}</td>
-            <td>{ user?.role !== 'admin' && <button  className='btn btn-xs btn-primary'>Make Admin</button>}</td>
+            <td>{ user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}</td>
             <td><button className='btn btn-xs btn-danger'>Delete</button></td>
           </tr>)
       }
