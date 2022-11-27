@@ -1,6 +1,19 @@
 import React from 'react';
 
-const Phone = ({ phone }) => {
+const Phone = ({ phone,setPhoneInfo }) => {
+
+const handleClick=()=>{
+
+
+setPhoneInfo(phone)
+
+
+
+
+}
+
+
+
   console.log(phone);
   return (
     <div>
@@ -56,7 +69,10 @@ const Phone = ({ phone }) => {
 
           <div className="flex items-center justify-center px-3 py-2 bg-gray-200 dark:bg-gray-700">
             <label
-              htmlFor="phone-modal"
+
+onClick={handleClick}
+
+              htmlFor="book-modal"
               className="px-3 py-2 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none"
             >
              Buy Now

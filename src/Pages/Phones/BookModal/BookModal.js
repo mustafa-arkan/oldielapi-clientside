@@ -1,33 +1,38 @@
-import { useQuery } from '@tanstack/react-query';
+
 import React from 'react';
-import BooksModal from './BooksModal';
 
 
 
-const BookModal = () => {
-    const { data: brands = [] } = useQuery({
-        queryKey: ['brands'],
-        queryFn: () =>
-          fetch('http://localhost:5000/brands').then((res) => res.json()),
-      });
+
+const BookModal = ({phoneInfo}) => {
+   
 
 
     return (
-        <div>
+    
 
 
+    <>
+    <input type="checkbox" id="book-modal" className="modal-toggle" />
+    <div className="modal">
+        <div className="modal-box relative">
+            <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <h3 className="text-lg font-bold">{phoneInfo.seller}</h3>
+            <form  className='grid grid-cols-1 gap-3 mt-10'>
+                <input type="text"  disabled  className="input w-full input-bordered " />
+                
+                <input name="name" type="text" value={phoneInfo.seller}   placeholder="Your Name" className="input w-full input-bordered" />
+                <input name="email" type="email" placeholder="Email Address" className="input w-full input-bordered" />
+                <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" />
+                <input name="name" type="text"    placeholder="Meeting Location" className="input w-full input-bordered" />
+                <br />
+                <input className='btn btn-accent w-full' type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</>
 
-            
-            {brands.map((brand) => (
-          <BooksModal key={brand._id} brand={brand}></BooksModal>
-        ))}
 
-
-
-
-
-
-</div>
 
        
     );

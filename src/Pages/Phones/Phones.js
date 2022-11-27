@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import BookModal from './BookModal/BookModal';
 
@@ -10,6 +10,10 @@ import Phone from './Phone';
 
 const Phones = () => {
   const phones = useLoaderData();
+
+const [phoneInfo,setPhoneInfo]=useState('')
+
+
   console.log(phones);
 
   return (
@@ -23,13 +27,18 @@ const Phones = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mx-10 my-6">
         {phones.map((phone) => (
-          <Phone key={phone._id} phone={phone}></Phone>
+          <Phone key={phone._id}
+           phone={phone}
+           
+           setPhoneInfo={setPhoneInfo}
+           
+           ></Phone>
 
 
 
         ))}
       </div>
-      <BookModal></BookModal>
+      <BookModal  phoneInfo={phoneInfo}   ></BookModal>
     </div>
   );
 };
