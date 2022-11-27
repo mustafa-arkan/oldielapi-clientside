@@ -48,6 +48,15 @@ const Login = () => {
                             })}
                             className="input input-bordered w-full max-w-xs" />
                         {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
+
+
+                        
+
+
+
+
+
+
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Password</span></label>

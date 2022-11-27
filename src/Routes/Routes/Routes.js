@@ -1,6 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
+import DashLay from "../../Layout/DashLay";
 import Main from "../../Layout/Main";
 import Blogs from "../../Pages/Blogs/Blogs";
+import AllSellers from "../../Pages/Dashboard/AllSellers/AllSellers";
+import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
+
 
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 
@@ -9,6 +13,7 @@ import Login from "../../Pages/Login/Login";
 import PageNotFound from "../../Pages/PageNotFound/PageNotFound";
 import Phones from "../../Pages/Phones/Phones";
 import SignUp from "../../SignUp/SignUp";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 
@@ -64,7 +69,8 @@ element:<Blogs></Blogs>
 
 
 
-}
+},
+
 
 
 
@@ -87,7 +93,41 @@ element:<Blogs></Blogs>
 
 {
 path:'/dashboard',
+element:<PrivateRoute><DashLay></DashLay></PrivateRoute>,
+children:[
+
+{
+
+path:'/dashboard',
 element:<Dashboard></Dashboard>
+
+
+},
+{
+path:'/dashboard/allsellers',
+element:<AllSellers></AllSellers>
+
+
+
+},
+{
+path:'/dashboard/allusers',
+element:<AllUsers></AllUsers>
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+]
 
 
 

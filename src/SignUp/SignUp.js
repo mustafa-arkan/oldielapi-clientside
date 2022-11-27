@@ -56,7 +56,7 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import {AuthContext} from '../contexts/AuthProvider'
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -74,7 +74,12 @@ const SignUp = () => {
                     displayName: data.name
                 }
                 updateUser(userInfo)
-                    .then(() => { })
+                    .then(() => {
+
+                        saveUser(data.name,data.email)
+
+
+                     })
                     .catch(err => console.log(err));
             })
             .catch(error => {
@@ -82,6 +87,28 @@ const SignUp = () => {
                 setSignUPError(error.message)
             });
     }
+
+    const saveUser = (name, email) =>{
+        const user ={name, email};
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data =>{
+           console.log('saveUser',data)
+
+          
+        })
+    }
+
+
+
+
+
 
     return (
         <div className='h-[800px] flex justify-center items-center'>
@@ -94,6 +121,22 @@ const SignUp = () => {
                             required: "Name is Required"
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
+
+
+                        {/* <select  type="text" {...register("usertype", {
+                            required: "User type is Required"
+                        })}   className="select select-primary w-full max-w-xs">
+  <option disabled selected>Which type of user?random user or seller?</option>
+  <option>User</option>
+  <option>Seller</option>
+  
+</select> */}
+
+
+
+
+
+
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Email</span></label>
