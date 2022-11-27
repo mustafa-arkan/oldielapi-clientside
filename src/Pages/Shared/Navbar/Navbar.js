@@ -24,7 +24,7 @@ const menuItems=<React.Fragment>
         <li><Link to='/'>Home</Link></li>
         
         <li><Link to="/blogs">Blogs</Link></li>
-  
+        <li><Link to="/signup">Signup</Link></li>
    
                 
              
