@@ -13,6 +13,7 @@ import Login from "../../Pages/Login/Login";
 import PageNotFound from "../../Pages/PageNotFound/PageNotFound";
 import Phones from "../../Pages/Phones/Phones";
 import SignUp from "../../SignUp/SignUp";
+import AdminRoute from "../AdminRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
@@ -112,7 +113,7 @@ element:<AllSellers></AllSellers>
 },
 {
 path:'/dashboard/allusers',
-element:<AllUsers></AllUsers>
+element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
 
 
 
