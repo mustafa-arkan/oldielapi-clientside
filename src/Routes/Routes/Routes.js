@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashLay from "../../Layout/DashLay";
 import Main from "../../Layout/Main";
+import AddProduct from "../../Pages/AddProduct/AddProduct";
+import MyProduct from "../../Pages/AddProduct/MyProduct";
 import Blogs from "../../Pages/Blogs/Blogs";
 import AllSellers from "../../Pages/Dashboard/AllSellers/AllSellers";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
@@ -117,11 +119,25 @@ element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
 
 
 
-}
+},
 
 
 
-
+{
+        path:'/dashboard/addproducts',
+        element:<AddProduct></AddProduct>
+        
+        
+        
+        },
+        {
+                path:'/dashboard/mypro',
+                element:<MyProduct></MyProduct>
+                
+                
+                
+                }
+        
 
 
 

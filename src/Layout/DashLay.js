@@ -25,8 +25,14 @@ const [isAdmin]=useAdmin(user?.email)
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 text-base-content">
-                        <li><Link to="/dashboard/allsellers">All Sellers</Link></li>
-                        
+                        {/* <li><Link to="/dashboard/allsellers">All Sellers</Link></li> */}
+
+
+
+                        <li><Link to="/dashboard/addproducts">Add a Product</Link></li>
+
+                        <li><Link to="/dashboard/mypro">My product</Link></li>
+
 
 
 {
@@ -35,7 +41,7 @@ isAdmin && <>
 
 
 
-<li><Link to="/dashboard/allusers">All Users</Link></li>
+<li><Link to="/dashboard/allusers">All Sellers</Link></li>
 
 
 </>
