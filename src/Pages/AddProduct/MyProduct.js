@@ -7,7 +7,7 @@ const MyProduct = () => {
     const {data: users = [], refetch} = useQuery({
         queryKey: ['users'],
         queryFn: async() =>{
-            const res = await fetch('http://localhost:5000/addproducts');
+            const res = await fetch('https://social-app-server-mustafa-arkan.vercel.app/addproducts');
             const data = await res.json();
             return data;
         }

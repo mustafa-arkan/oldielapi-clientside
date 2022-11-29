@@ -32,6 +32,7 @@ const [isAdmin]=useAdmin(user?.email)
                         <li><Link to="/dashboard/addproducts">Add a Product</Link></li>
 
                         <li><Link to="/dashboard/mypro">My product</Link></li>
+                        {/* <li><Link to="/dashboard/allusers">All Sellers</Link></li> */}
 
 
 

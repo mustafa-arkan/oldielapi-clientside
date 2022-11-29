@@ -12,7 +12,7 @@ const AddProduct = () => {
 
 
 
-        fetch('http://localhost:5000/addproducts', {
+        fetch('https://social-app-server-mustafa-arkan.vercel.app/addproducts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json', 

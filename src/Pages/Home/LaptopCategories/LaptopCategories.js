@@ -8,7 +8,7 @@ const LaptopCategories = () => {
   const { data: brands = [] } = useQuery({
     queryKey: ['brands'],
     queryFn: () =>
-      fetch('http://localhost:5000/brands').then((res) => res.json()),
+      fetch('https://social-app-server-mustafa-arkan.vercel.app/brands').then((res) => res.json()),
   });
   
   return (

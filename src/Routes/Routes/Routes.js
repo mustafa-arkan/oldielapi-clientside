@@ -56,7 +56,7 @@ element:<Login></Login>
                                 path: '/brands/:brand',
                                 element: <Phones></Phones>,
                                 loader: ({ params }) =>
-                                  fetch(`http://localhost:5000/brands/${params.brand}`),
+                                  fetch(`https://social-app-server-mustafa-arkan.vercel.app/brands/${params.brand}`),
                               },
 
 
