@@ -1,11 +1,26 @@
 
-import React from 'react';
+
+import toast from 'react-hot-toast';
+
 
 
 
 
 const BookModal = ({phoneInfo}) => {
+
+
+
    
+const handleClick=()=>{
+
+
+
+
+    toast.success('Order placed successfully');
+}
+
+
+
 
 
     return (
@@ -22,11 +37,11 @@ const BookModal = ({phoneInfo}) => {
                 <input type="text"  disabled  className="input w-full input-bordered " />
                 
                 <input name="name" type="text" value={phoneInfo.seller}   placeholder="Your Name" className="input w-full input-bordered" />
-                <input name="email" type="email" placeholder="Email Address" className="input w-full input-bordered" />
+                <input name="email" type="email"    placeholder="Email Address" className="input w-full input-bordered" />
                 <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" />
                 <input name="name" type="text"    placeholder="Meeting Location" className="input w-full input-bordered" />
                 <br />
-                <input className='btn btn-accent w-full' type="submit" value="Submit" />
+                <input   onClick={handleClick}   className='btn btn-accent w-full' type="submit" value="Submit" />
             </form>
         </div>
     </div>
