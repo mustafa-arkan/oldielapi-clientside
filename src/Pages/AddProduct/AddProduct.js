@@ -4,12 +4,6 @@ import toast from 'react-hot-toast';
 import { Navigate } from 'react-router-dom';
 
 
-
-
-
-
-
-
 const AddProduct = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -22,7 +16,7 @@ const AddProduct = () => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json', 
-                // authorization: `bearer ${localStorage.getItem('accessToken')}`
+                
             },
            
         })
@@ -34,19 +28,13 @@ const AddProduct = () => {
                 })
 
 
-
-
-
-
     }
 
-
-    
 
 
     return (
         <div className='w-96 p-7'>
-        <h2 className="text-4xl">Add A Doctor</h2>
+        <h2 className="text-4xl">Add your product.</h2>
         <form onSubmit={handleSubmit(handleAddProduct)}>
             
             <div className="form-control w-full max-w-xs">
@@ -116,24 +104,24 @@ const AddProduct = () => {
             </div>
 
 
-            <div className="form-control w-full max-w-xs">
+            {/* <div className="form-control w-full max-w-xs">
                 <label className="label"> <span className="label-text">Product Photo Url</span></label>
                 <input type="text" {...register("url", {
                     required: true
                 })} className="input input-bordered w-full max-w-xs" />
                 {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
-            </div>
+            </div> */}
 
 
 
             
-            {/* <div className="form-control w-full max-w-xs">
+            <div className="form-control w-full max-w-xs">
                 <label className="label"> <span className="label-text">Photo </span></label>
                 <input type="file" {...register("image", {
-                    // required: "Photo is Required"
+                    
                 })} className="input input-bordered w-full max-w-xs" />
                 {errors.img && <p className='text-red-500'>{errors.img.message}</p>}
-            </div> */}
+            </div>
             <input className='btn btn-accent w-full mt-4' value="Add Your Product" type="submit" />
         </form>
     </div>
