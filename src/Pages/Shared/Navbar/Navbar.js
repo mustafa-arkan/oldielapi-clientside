@@ -52,7 +52,7 @@ const menuItems=<React.Fragment>
        
       </ul>
     </div>
-    <Link to="/" className="btn btn-ghost normal-case text-xl">OLDIE<span className='  text-orange-600'>LAPI</span></Link>
+    <Link to="/" className="btn btn-ghost normal-case text-xl">LAP<span className='  text-orange-600'>SELL</span></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal p-0">
